@@ -1,0 +1,54 @@
+@use './../mixins' as *;
+
+.header {
+  background-color: var(--black);
+  color: var(--white);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 100;
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    height: var(--header-height);
+  }
+
+  &__wrap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__btn {
+    display: flex;
+    border-bottom: 0.1rem solid transparent;
+    width: fit-content;
+    color: var(--accent);
+
+    &:hover {
+      border-color: var(--accent);
+    }
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+  }
+
+  &__center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__left {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}

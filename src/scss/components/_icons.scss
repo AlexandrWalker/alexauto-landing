@@ -1,0 +1,21 @@
+@use './../mixins' as *;
+
+[class^="icon-"],
+[class*=" icon-"] {
+  --font-size: 40px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--font-size);
+  height: var(--font-size);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+
+  font-size: var(--font-size);
+  color: var(--white);
+
+  &:hover {
+    color: var(--accent);
+  }
+}

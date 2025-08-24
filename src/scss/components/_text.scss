@@ -1,0 +1,106 @@
+@use './../mixins' as *;
+
+h1 {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 70px;
+  line-height: normal;
+
+  @include lg {
+    font-size: 40px;
+  }
+
+  @include md {
+    font-size: 30px;
+  }
+
+  @include sm {
+    font-size: 24px;
+  }
+}
+
+h2 {
+  font-family: var(--font-family);
+  font-weight: 800;
+  font-size: 46px;
+  line-height: normal;
+
+  @include lg {
+    font-size: 40px;
+  }
+
+  @include md {
+    font-size: 30px;
+  }
+
+  @include sm {
+    font-size: 24px;
+  }
+}
+
+h3 {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 30px;
+  line-height: normal;
+
+  @include lg {
+    font-size: 24px;
+  }
+
+  @include md {
+    font-size: 22px;
+  }
+
+  @include sm {
+    font-size: 20px;
+  }
+}
+
+h4 {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: normal;
+
+  @include lg {
+    font-size: 22px;
+  }
+
+  @include md {
+    font-size: 20px;
+  }
+}
+
+h5 {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 22px;
+  line-height: normal;
+
+  @include lg {
+    font-size: 20px;
+  }
+
+  @include sm {
+    font-size: 18px;
+  }
+}
+
+h6 {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: normal;
+
+  @include md {
+    font-size: 18px;
+  }
+}
+
+p {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: normal;
+}

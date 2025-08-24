@@ -1,0 +1,54 @@
+@use './../mixins' as *;
+
+.btn {
+  --width: fit-content;
+  --height: 60px;
+  --padding: 20px;
+  --button-color: var(--black);
+  --button-background: var(--white);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background: var(--button-background);
+  width: var(--width);
+  height: var(--height);
+  padding: var(--padding);
+  transition: all 0.3s ease;
+
+  font-weight: 500;
+  font-size: 16px;
+  text-align: center;
+  color: var(--button-color);
+  white-space: nowrap;
+  text-transform: uppercase;
+
+  position: relative;
+  z-index: 1;
+  transition-delay: 0.2s;
+
+  i {
+    font-size: 24px;
+    color: var(--accent);
+    transition-delay: 0.2s;
+  }
+
+  &:hover {
+    --button-color: var(--white);
+    --button-background: transparent;
+
+    i {
+      color: var(--white);
+
+      @include sm {
+        color: var(--accent);
+      }
+    }
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}

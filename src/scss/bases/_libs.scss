@@ -1,0 +1,6 @@
+@use './../mixins' as *;
+
+.swiper {}
+
+[class^="swiper-button-"],
+[class*=" swiper-button-"] {}

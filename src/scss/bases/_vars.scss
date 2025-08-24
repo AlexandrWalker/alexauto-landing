@@ -1,0 +1,21 @@
+@use './../mixins' as *;
+
+:root {
+  --font-family: "Roboto", sans-serif;
+
+  --container-padding: 30px;
+  --container-width: 1500px;
+
+  --white: #fffffc;
+  --black: #1b1e1f;
+  --gray: #fffffccc;
+  --accent: #f50400;
+
+  --page-bg: #ffffff;
+
+  --header-height: 120px;
+
+  @include md {
+    --container-padding: 20px;
+  }
+}
