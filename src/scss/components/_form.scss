@@ -10,6 +10,10 @@
   max-width: 410px;
   width: 100%;
 
+  @include lg {
+    max-width: 100%;
+  }
+
   &-title {
     text-align: center;
   }
@@ -135,3 +139,37 @@
     --width: 100%;
   }
 }
+
+.form-status {
+  text-align: center;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: normal;
+  display: none;
+}
+
+.form-success {
+  color: lightgreen;
+}
+
+.form-failed {
+  color: red;
+}
+
+.form._success .form-success {
+  display: block;
+}
+
+.form._failed .form-failed {
+  display: block;
+}
+
+.form-input._error {
+  border-color: red;
+}
+
+.form-checkbox._error {
+  border-color: red;
+}
+

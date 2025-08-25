@@ -28,6 +28,14 @@
     padding: 80px 0;
     position: relative;
     z-index: 2;
+
+    @include lg {
+      flex-direction: column;
+      gap: 50px;
+      max-width: 576px;
+      padding: 40px 0;
+      margin: 0 auto;
+    }
   }
 
   &__content {

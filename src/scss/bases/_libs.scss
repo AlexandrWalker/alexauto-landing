@@ -1,6 +1,32 @@
 @use './../mixins' as *;
 
-.swiper {}
+.swiper {
+
+  &__btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    width: 100%;
+    z-index: 2;
+  }
+}
 
 [class^="swiper-button-"],
-[class*=" swiper-button-"] {}
+[class*=" swiper-button-"] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 66px;
+  margin-top: 30px;
+
+  svg {
+    width: 60px;
+    fill: var(--black);
+  }
+
+  &::after {
+    display: none;
+  }
+}

@@ -7,7 +7,7 @@
     @@include('./blocks/header.html', {"logo-path": "./images/logo/logo.png"})
     <main class="main">
       <!-- Главный блок -->
-      <section class="hero">
+      <section id="hero" class="hero">
         <div class="hero__container container">
           <div class="hero__inner">
 
@@ -45,43 +45,42 @@
               </div>
             </div>
 
-            <form class="form" action="#">
+            <form class="form uniForm">
+              <input type="hidden" name="project_name" value="AlexAuto" />
+              <input type="hidden" name="admin_email" value="alexauto126.ru@gmail.com" />
+              <input type="hidden" name="form_subject" value="Заявка" />
               <div class="form-title">
-                <h3>
-                  Оставить заявку
-                </h3>
+                <h3>Оставить заявку</h3>
               </div>
               <div class="form-content">
                 <div class="form-group">
-                  <p>
-                    Имя
-                  </p>
-                  <input class="form-input" type="text">
+                  <p>Имя</p>
+                  <input class="form-input" name="Имя" type="text" />
                 </div>
                 <div class="form-group">
                   <p>
                     <span>*</span>
                     Телефон
                   </p>
-                  <input class="form-input" type="tel">
+                  <input class="form-input _req" name="Телефон" type="tel" />
                 </div>
                 <div class="form-group">
                   <p>
                     <span>*</span>
                     E-Mail
                   </p>
-                  <input class="form-input" type="email">
+                  <input class="form-input _req _email" name="Email" type="email" />
                 </div>
                 <div class="form-group form-group--checkbox">
-                  <input id="checkbox" class="form-checkbox" type="checkbox">
+                  <input id="checkbox" class="form-checkbox _req" type="checkbox" value="Согласие" />
                   <label for="checkbox">
                     <span>* </span>Я согласен на обработку моих <a href="/agreement" target="_blank">персональных
                       данных</a>
                   </label>
                 </div>
-                <button class="btn btn--accent">
-                  Оставить
-                </button>
+                <button class="btn btn--accent">Оставить</button>
+                <span class="form-status form-success">Заявка успешно отправлена</span>
+                <span class="form-status form-failed">Не удалось отправить заявку, попробуйте еще раз</span>
               </div>
             </form>
 
@@ -89,14 +88,14 @@
         </div>
       </section>
 
-      <section class="service none">
+      <section id="service" class="service">
         <div class="service__container container">
           <div class="service__inner">
 
             <div class="service__items">
               <div class="service__item">
                 <div class="service__item-img">
-                  <img src="./../images/service/service-icon-1.svg" alt="">
+                  <img src="./images/service/service-icon-1.svg" alt="">
                 </div>
                 <div class="service__item-content">
                   <div class="service__item-title">
@@ -117,201 +116,1200 @@
                   </div>
                 </div>
               </div>
+              <div class="service__item">
+                <div class="service__item-img">
+                  <img src="./images/service/service-icon-2.svg" alt="">
+                </div>
+                <div class="service__item-content">
+                  <div class="service__item-title">
+                    <h4>
+                      Ремонт двигателя
+                    </h4>
+                  </div>
+                  <div class="service__item-list">
+                    <div class="service__item-wrap">
+                      - Ремонт турбины
+                    </div>
+                    <div class="service__item-wrap">
+                      - Ремонт системы охлаждения
+                    </div>
+                    <div class="service__item-wrap">
+                      - Ремонт топливной системы
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="service__item">
+                <div class="service__item-img">
+                  <img src="./images/service/service-icon-1.svg" alt="">
+                </div>
+                <div class="service__item-content">
+                  <div class="service__item-title">
+                    <h4>
+                      Трансмиссия
+                    </h4>
+                  </div>
+                  <div class="service__item-list">
+                    <div class="service__item-wrap">
+                      - Диагностика АКПП/МКПП
+                    </div>
+                    <div class="service__item-wrap">
+                      - Замена сцепления
+                    </div>
+                    <div class="service__item-wrap">
+                      - Ремонт карданного вала
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="service__item">
+                <div class="service__item-img">
+                  <img src="./images/service/service-icon-1.svg" alt="">
+                </div>
+                <div class="service__item-content">
+                  <div class="service__item-title">
+                    <h4>
+                      Подвеска
+                    </h4>
+                  </div>
+                  <div class="service__item-list">
+                    <div class="service__item-wrap">
+                      - Диагностика подвески
+                    </div>
+                    <div class="service__item-wrap">
+                      - Замена амортизаторов
+                    </div>
+                    <div class="service__item-wrap">
+                      - Сход - развал
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="service__item">
+                <div class="service__item-img">
+                  <img src="./images/service/service-icon-1.svg" alt="">
+                </div>
+                <div class="service__item-content">
+                  <div class="service__item-title">
+                    <h4>
+                      Тормоза
+                    </h4>
+                  </div>
+                  <div class="service__item-list">
+                    <div class="service__item-wrap">
+                      - Диагностика тормозной системы
+                    </div>
+                    <div class="service__item-wrap">
+                      - Ремонт тормозной системы
+                    </div>
+                    <div class="service__item-wrap">
+                      - Очистка тормозных дисков
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="service__item">
+                <div class="service__item-img">
+                  <img src="./images/service/service-icon-1.svg" alt="">
+                </div>
+                <div class="service__item-content">
+                  <div class="service__item-title">
+                    <h4>
+                      Электрика
+                    </h4>
+                  </div>
+                  <div class="service__item-list">
+                    <div class="service__item-wrap">
+                      - Ремонт электропроводки
+                    </div>
+                    <div class="service__item-wrap">
+                      - Проверка аккумулятора
+                    </div>
+                    <div class="service__item-wrap">
+                      - Ремонт генератора
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="service__item">
+                <div class="service__item-img">
+                  <img src="./images/service/service-icon-1.svg" alt="">
+                </div>
+                <div class="service__item-content">
+                  <div class="service__item-title">
+                    <h4>
+                      Шиномонтаж
+                    </h4>
+                  </div>
+                  <div class="service__item-list">
+                    <div class="service__item-wrap">
+                      - Вулканизация
+                    </div>
+                    <div class="service__item-wrap">
+                      - Балансировка колес
+                    </div>
+                    <div class="service__item-wrap">
+                      - Монтаж / демонтаж колес
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="service__item">
+                <div class="service__item-img">
+                  <img src="./images/service/service-icon-1.svg" alt="">
+                </div>
+                <div class="service__item-content">
+                  <div class="service__item-title">
+                    <h4>
+                      Тюнинг
+                    </h4>
+                  </div>
+                  <div class="service__item-list">
+                    <div class="service__item-wrap">
+                      - Автовинил
+                    </div>
+                    <div class="service__item-wrap">
+                      - Тонировка
+                    </div>
+                    <div class="service__item-wrap">
+                      - Установка аудио систем
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
 
           </div>
         </div>
       </section>
 
-      <!-- FAQ -->
-      <section id="faq" class="faq none">
+      <section id="why" class="why">
         <div class="container">
-          <div class="faq__inner">
-            <div class="general__head" data-animation="reveal">
-              <div class="general__head-title">
+          <div class="why__inner">
+            <div class="why__head">
+              <div class="why__head-left">
+                <h5>
+                  Убедитесь сами, что мы <br>
+                  не просто хороший автосервис. Мы - уникальны!
+                </h5>
+              </div>
+              <div class="why__head-right">
                 <h2>
-                  Ответы на частые вопросы
+                  ПОЧЕМУ МЫ?
                 </h2>
               </div>
             </div>
-            <div class="faq__items accordion-parent">
-              <div class="faq__item accordion">
-                <div class="faq__item-head">
-                  <div class="faq__item-wrap">
-                    <div class="faq__item-count">
-                      <span>
-                        01
-                      </span>
-                    </div>
-                    <div class="faq__item-title">
-                      <p>
-                        Примерный текст вопроса для примера
-                      </p>
-                    </div>
+            <div class="why__body">
+              <div class="why__items">
+                <div class="why__item">
+                  <div class="why__item-count">
+                    01
                   </div>
-                  <i class="icon-chevron"></i>
-                </div>
-                <div class="faq__item-body accordion-body">
-                  <div class="faq__item-wrap">
+                  <div class="why__item-title">
+                    <h4>
+                      Применяем строгие стандарты качества
+                    </h4>
+                  </div>
+                  <div class="why__item-text">
                     <p>
-                      Подписали 1й контракт с СибАкадемСтрой на штукатурку и стяжку Европейский берег 1я очередь , на
-                      устройство гидроизоляции на объекте Миргород Подписали 1й контракт с СибАкадемСтрой на штукатурку
-                      и
-                      стяжку Европейский берег 1я очередь , на устройство гидроизоляции на объекте Миргород Подписали 1й
-                      контракт с СибАкадемСтрой на штукатурку и стяжку Европейский берег 1я очередь , на устройство
-                      гидроизоляции на объекте Миргород Подписали 1й контракт с СибАкадемСтрой на штукатурку и стяжку
-                      Европейский берег 1я очередь , на устройство гидроизоляции на объекте Миргород
+                      Отвечаем за системность и правильность выполнения любых работ.
+                    </p>
+                  </div>
+                </div>
+                <div class="why__item">
+                  <div class="why__item-count">
+                    02
+                  </div>
+                  <div class="why__item-title">
+                    <h4>
+                      Сохраняем Ваши деньги
+                    </h4>
+                  </div>
+                  <div class="why__item-text">
+                    <p>
+                      Рассчитаем расходы в минимальную стоимость, что сохранит ваши средства.
+                    </p>
+                  </div>
+                </div>
+                <div class="why__item">
+                  <div class="why__item-count">
+                    03
+                  </div>
+                  <div class="why__item-title">
+                    <h4>
+                      Тщательно подбираем исполнителей
+                    </h4>
+                  </div>
+                  <div class="why__item-text">
+                    <p>
+                      Каждый сотрудник несет ответственность за то, что выполняет.
                     </p>
                   </div>
                 </div>
               </div>
-              <div class="faq__item accordion">
-                <div class="faq__item-head">
-                  <div class="faq__item-wrap">
-                    <div class="faq__item-count">
-                      <span>
-                        02
-                      </span>
-                    </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" class="faq">
+        <div class="container">
+          <div class="faq__inner">
+            <div class="faq__head">
+              <div class="faq__head-left">
+                <h5>
+                  Стоимость работ рассчитывается в индивидуальном порядке, но мы всегда идем навстречу клиентам и
+                  никогда <b>не завышаем</b> расценки.
+                </h5>
+              </div>
+              <div class="faq__head-right">
+                <h2>
+                  ЦЕНЫ
+                </h2>
+              </div>
+            </div>
+
+            <div class="faq__body accordion-parent">
+              <div class="faq__items">
+                <div class="faq__item accordion">
+                  <div class="faq__item-head">
                     <div class="faq__item-title">
-                      <p>
-                        Примерный текст вопроса для примера
-                      </p>
+                      <h5>
+                        Техническое обслуживание
+                      </h5>
+                    </div>
+                    <div class="faq__item-arrow">
+                      <img src="./images/icon/arrow-down.svg" alt="">
                     </div>
                   </div>
-                  <i class="icon-chevron"></i>
+                  <div class="faq__item-body accordion-body">
+                    <div class="faq__item-wrap">
+                      <ul>
+                        <li>
+                          <p>
+                            Замена масла в ДВС
+                          </p>
+                          <h6>
+                            от
+                            <span>
+                              560
+                            </span>
+                            руб.
+                          </h6>
+                        </li>
+                        <li>
+                          <p>
+                            Замена масла в ДВС
+                          </p>
+                          <h6>
+                            от
+                            <span>
+                              560
+                            </span>
+                            руб.
+                          </h6>
+                        </li>
+                        <li>
+                          <p>
+                            Замена масла в ДВС
+                          </p>
+                          <h6>
+                            от
+                            <span>
+                              560
+                            </span>
+                            руб.
+                          </h6>
+                        </li>
+                        <li>
+                          <p>
+                            Замена масла в ДВС
+                          </p>
+                          <h6>
+                            от
+                            <span>
+                              560
+                            </span>
+                            руб.
+                          </h6>
+                        </li>
+                        <li>
+                          <p>
+                            Замена масла в ДВС
+                          </p>
+                          <h6>
+                            от
+                            <span>
+                              560
+                            </span>
+                            руб.
+                          </h6>
+                        </li>
+                        <li>
+                          <p>
+                            Замена масла в ДВС
+                          </p>
+                          <h6>
+                            от
+                            <span>
+                              560
+                            </span>
+                            руб.
+                          </h6>
+                        </li>
+                        <li>
+                          <p>
+                            Замена масла в ДВС
+                          </p>
+                          <h6>
+                            от
+                            <span>
+                              560
+                            </span>
+                            руб.
+                          </h6>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
-                <div class="faq__item-body accordion-body">
-                  <div class="faq__item-wrap">
-                    <p>
-                      Подписали 1й контракт с СибАкадемСтрой на штукатурку и стяжку Европейский берег 1я очередь , на
-                      устройство гидроизоляции на объекте Миргород Подписали 1й контракт с СибАкадемСтрой на штукатурку
-                      и
-                      стяжку Европейский берег 1я очередь , на устройство гидроизоляции на объекте Миргород Подписали 1й
-                      контракт с СибАкадемСтрой на штукатурку и стяжку Европейский берег 1я очередь , на устройство
-                      гидроизоляции на объекте Миргород Подписали 1й контракт с СибАкадемСтрой на штукатурку и стяжку
-                      Европейский берег 1я очередь , на устройство гидроизоляции на объекте Миргород
-                    </p>
+                <div class="faq__item accordion">
+                  <div class="faq__item-head">
+                    <div class="faq__item-title">
+                      <h5>
+                        Ремонт двигателя
+                      </h5>
+                    </div>
+                    <div class="faq__item-arrow">
+                      <img src="./images/icon/arrow-down.svg" alt="">
+                    </div>
+                  </div>
+                  <div class="faq__item-body accordion-body">
+                    <div class="faq__item-wrap">
+                      <ul>
+                        <li>
+                          <p>
+                            Замена масла в ДВС
+                          </p>
+                          <h6>
+                            от
+                            <span>
+                              560
+                            </span>
+                            руб.
+                          </h6>
+                        </li>
+                        <li>
+                          <p>
+                            Замена масла в ДВС
+                          </p>
+                          <h6>
+                            от
+                            <span>
+                              560
+                            </span>
+                            руб.
+                          </h6>
+                        </li>
+                        <li>
+                          <p>
+                            Замена масла в ДВС
+                          </p>
+                          <h6>
+                            от
+                            <span>
+                              560
+                            </span>
+                            руб.
+                          </h6>
+                        </li>
+                        <li>
+                          <p>
+                            Замена масла в ДВС
+                          </p>
+                          <h6>
+                            от
+                            <span>
+                              560
+                            </span>
+                            руб.
+                          </h6>
+                        </li>
+                        <li>
+                          <p>
+                            Замена масла в ДВС
+                          </p>
+                          <h6>
+                            от
+                            <span>
+                              560
+                            </span>
+                            руб.
+                          </h6>
+                        </li>
+                        <li>
+                          <p>
+                            Замена масла в ДВС
+                          </p>
+                          <h6>
+                            от
+                            <span>
+                              560
+                            </span>
+                            руб.
+                          </h6>
+                        </li>
+                        <li>
+                          <p>
+                            Замена масла в ДВС
+                          </p>
+                          <h6>
+                            от
+                            <span>
+                              560
+                            </span>
+                            руб.
+                          </h6>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="faq__item accordion">
+                  <div class="faq__item-head">
+                    <div class="faq__item-title">
+                      <h5>
+                        Ремонт трансмиссии
+                      </h5>
+                    </div>
+                    <div class="faq__item-arrow">
+                      <img src="./images/icon/arrow-down.svg" alt="">
+                    </div>
+                  </div>
+                  <div class="faq__item-body accordion-body">
+                    <div class="faq__item-wrap">
+                      <ul>
+                        <li>
+                          <p>
+                            Замена масла в ДВС
+                          </p>
+                          <h6>
+                            от
+                            <span>
+                              560
+                            </span>
+                            руб.
+                          </h6>
+                        </li>
+                        <li>
+                          <p>
+                            Замена масла в ДВС
+                          </p>
+                          <h6>
+                            от
+                            <span>
+                              560
+                            </span>
+                            руб.
+                          </h6>
+                        </li>
+                        <li>
+                          <p>
+                            Замена масла в ДВС
+                          </p>
+                          <h6>
+                            от
+                            <span>
+                              560
+                            </span>
+                            руб.
+                          </h6>
+                        </li>
+                        <li>
+                          <p>
+                            Замена масла в ДВС
+                          </p>
+                          <h6>
+                            от
+                            <span>
+                              560
+                            </span>
+                            руб.
+                          </h6>
+                        </li>
+                        <li>
+                          <p>
+                            Замена масла в ДВС
+                          </p>
+                          <h6>
+                            от
+                            <span>
+                              560
+                            </span>
+                            руб.
+                          </h6>
+                        </li>
+                        <li>
+                          <p>
+                            Замена масла в ДВС
+                          </p>
+                          <h6>
+                            от
+                            <span>
+                              560
+                            </span>
+                            руб.
+                          </h6>
+                        </li>
+                        <li>
+                          <p>
+                            Замена масла в ДВС
+                          </p>
+                          <h6>
+                            от
+                            <span>
+                              560
+                            </span>
+                            руб.
+                          </h6>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="faq__item accordion">
-                <div class="faq__item-head">
-                  <div class="faq__item-wrap">
-                    <div class="faq__item-count">
-                      <span>
-                        03
-                      </span>
-                    </div>
+              <div class="faq__items">
+                <div class="faq__item accordion">
+                  <div class="faq__item-head">
                     <div class="faq__item-title">
-                      <p>
-                        Примерный текст вопроса для примера
-                      </p>
+                      <h5>
+                        Электрика
+                      </h5>
+                    </div>
+                    <div class="faq__item-arrow">
+                      <img src="./images/icon/arrow-down.svg" alt="">
                     </div>
                   </div>
-                  <i class="icon-chevron"></i>
+                  <div class="faq__item-body accordion-body">
+                    <div class="faq__item-wrap">
+                      <ul>
+                        <li>
+                          <p>
+                            Замена масла в ДВС
+                          </p>
+                          <h6>
+                            от
+                            <span>
+                              560
+                            </span>
+                            руб.
+                          </h6>
+                        </li>
+                        <li>
+                          <p>
+                            Замена масла в ДВС
+                          </p>
+                          <h6>
+                            от
+                            <span>
+                              560
+                            </span>
+                            руб.
+                          </h6>
+                        </li>
+                        <li>
+                          <p>
+                            Замена масла в ДВС
+                          </p>
+                          <h6>
+                            от
+                            <span>
+                              560
+                            </span>
+                            руб.
+                          </h6>
+                        </li>
+                        <li>
+                          <p>
+                            Замена масла в ДВС
+                          </p>
+                          <h6>
+                            от
+                            <span>
+                              560
+                            </span>
+                            руб.
+                          </h6>
+                        </li>
+                        <li>
+                          <p>
+                            Замена масла в ДВС
+                          </p>
+                          <h6>
+                            от
+                            <span>
+                              560
+                            </span>
+                            руб.
+                          </h6>
+                        </li>
+                        <li>
+                          <p>
+                            Замена масла в ДВС
+                          </p>
+                          <h6>
+                            от
+                            <span>
+                              560
+                            </span>
+                            руб.
+                          </h6>
+                        </li>
+                        <li>
+                          <p>
+                            Замена масла в ДВС
+                          </p>
+                          <h6>
+                            от
+                            <span>
+                              560
+                            </span>
+                            руб.
+                          </h6>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
-                <div class="faq__item-body accordion-body">
-                  <div class="faq__item-wrap">
-                    <p>
-                      Подписали 1й контракт с СибАкадемСтрой на штукатурку и стяжку Европейский берег 1я очередь , на
-                      устройство гидроизоляции на объекте Миргород Подписали 1й контракт с СибАкадемСтрой на штукатурку
-                      и
-                      стяжку Европейский берег 1я очередь , на устройство гидроизоляции на объекте Миргород Подписали 1й
-                      контракт с СибАкадемСтрой на штукатурку и стяжку Европейский берег 1я очередь , на устройство
-                      гидроизоляции на объекте Миргород Подписали 1й контракт с СибАкадемСтрой на штукатурку и стяжку
-                      Европейский берег 1я очередь , на устройство гидроизоляции на объекте Миргород
-                    </p>
+                <div class="faq__item accordion">
+                  <div class="faq__item-head">
+                    <div class="faq__item-title">
+                      <h5>
+                        Шиномонтаж
+                      </h5>
+                    </div>
+                    <div class="faq__item-arrow">
+                      <img src="./images/icon/arrow-down.svg" alt="">
+                    </div>
+                  </div>
+                  <div class="faq__item-body accordion-body">
+                    <div class="faq__item-wrap">
+                      <ul>
+                        <li>
+                          <p>
+                            Замена масла в ДВС
+                          </p>
+                          <h6>
+                            от
+                            <span>
+                              560
+                            </span>
+                            руб.
+                          </h6>
+                        </li>
+                        <li>
+                          <p>
+                            Замена масла в ДВС
+                          </p>
+                          <h6>
+                            от
+                            <span>
+                              560
+                            </span>
+                            руб.
+                          </h6>
+                        </li>
+                        <li>
+                          <p>
+                            Замена масла в ДВС
+                          </p>
+                          <h6>
+                            от
+                            <span>
+                              560
+                            </span>
+                            руб.
+                          </h6>
+                        </li>
+                        <li>
+                          <p>
+                            Замена масла в ДВС
+                          </p>
+                          <h6>
+                            от
+                            <span>
+                              560
+                            </span>
+                            руб.
+                          </h6>
+                        </li>
+                        <li>
+                          <p>
+                            Замена масла в ДВС
+                          </p>
+                          <h6>
+                            от
+                            <span>
+                              560
+                            </span>
+                            руб.
+                          </h6>
+                        </li>
+                        <li>
+                          <p>
+                            Замена масла в ДВС
+                          </p>
+                          <h6>
+                            от
+                            <span>
+                              560
+                            </span>
+                            руб.
+                          </h6>
+                        </li>
+                        <li>
+                          <p>
+                            Замена масла в ДВС
+                          </p>
+                          <h6>
+                            от
+                            <span>
+                              560
+                            </span>
+                            руб.
+                          </h6>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="faq__item accordion">
+                  <div class="faq__item-head">
+                    <div class="faq__item-title">
+                      <h5>
+                        Мойка
+                      </h5>
+                    </div>
+                    <div class="faq__item-arrow">
+                      <img src="./images/icon/arrow-down.svg" alt="">
+                    </div>
+                  </div>
+                  <div class="faq__item-body accordion-body">
+                    <div class="faq__item-wrap">
+                      <ul>
+                        <li>
+                          <p>
+                            Замена масла в ДВС
+                          </p>
+                          <h6>
+                            от
+                            <span>
+                              560
+                            </span>
+                            руб.
+                          </h6>
+                        </li>
+                        <li>
+                          <p>
+                            Замена масла в ДВС
+                          </p>
+                          <h6>
+                            от
+                            <span>
+                              560
+                            </span>
+                            руб.
+                          </h6>
+                        </li>
+                        <li>
+                          <p>
+                            Замена масла в ДВС
+                          </p>
+                          <h6>
+                            от
+                            <span>
+                              560
+                            </span>
+                            руб.
+                          </h6>
+                        </li>
+                        <li>
+                          <p>
+                            Замена масла в ДВС
+                          </p>
+                          <h6>
+                            от
+                            <span>
+                              560
+                            </span>
+                            руб.
+                          </h6>
+                        </li>
+                        <li>
+                          <p>
+                            Замена масла в ДВС
+                          </p>
+                          <h6>
+                            от
+                            <span>
+                              560
+                            </span>
+                            руб.
+                          </h6>
+                        </li>
+                        <li>
+                          <p>
+                            Замена масла в ДВС
+                          </p>
+                          <h6>
+                            от
+                            <span>
+                              560
+                            </span>
+                            руб.
+                          </h6>
+                        </li>
+                        <li>
+                          <p>
+                            Замена масла в ДВС
+                          </p>
+                          <h6>
+                            от
+                            <span>
+                              560
+                            </span>
+                            руб.
+                          </h6>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="faq__item accordion">
-                <div class="faq__item-head">
-                  <div class="faq__item-wrap">
-                    <div class="faq__item-count">
-                      <span>
-                        04
-                      </span>
+            </div>
+
+            <div class="banner">
+              <div class="banner__imgs">
+                <div class="banner__img">
+                  <img src="./images/banner/banner-1.webp" alt="">
+                </div>
+                <div class="banner__img">
+                  <img src="./images/banner/banner-2.webp" alt="">
+                </div>
+              </div>
+              <div class="banner__content">
+                <h2>СКИДКА -25%</h2>
+                <p>
+                  Обслуживайтесь регулярно, получайте скидки!
+                  <br>
+                  - скидка на ТО -25%
+                  <br>
+                  - мойка в подарок!
+                </p>
+                <button class="btn btn--white">
+                  Связаться с нами
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="about">
+        <div class="container">
+          <div class="about__inner">
+
+            <div class="about__body">
+              <div class="about__cover">
+                <img src="./images/about/about-cover.webp" alt="">
+              </div>
+              <div class="about__content">
+                <h2>
+                  О компании
+                </h2>
+                <p>
+                  Наша компания занимаемся ремонтом легковых автомобилей, а также продажей запчастей и автомасел.
+                  Автотехцентр Партнер динамично развивающаяся компания в области техобслуживания автомобилей. Мы
+                  предоставляем широкий спектр услуг, и постоянно работаем над повышением качества.
+                  <br>
+                  <br>
+                  Все работы проводятся на современном оборудовании, профессиональными сотрудниками. За годы успешной
+                  работы
+                  мы приобрели бесценный опыт работы, о чем свидетельствуют отзывы наших клиентов.
+                </p>
+              </div>
+            </div>
+
+            <div class="about__items">
+              <div class="about__item">
+                <div class="about__item-count">
+                  17
+                </div>
+                <div class="about__item-text">
+                  <p>
+                    лет на рынке
+                  </p>
+                </div>
+              </div>
+              <div class="about__item">
+                <div class="about__item-count">
+                  1000+
+                </div>
+                <div class="about__item-text">
+                  <p>
+                    довольных клиентов
+                  </p>
+                </div>
+              </div>
+              <div class="about__item">
+                <div class="about__item-count">
+                  26
+                </div>
+                <div class="about__item-text">
+                  <p>
+                    специалистов в штате
+                  </p>
+                </div>
+              </div>
+              <div class="about__item">
+                <div class="about__item-count">
+                  -10%
+                </div>
+                <div class="about__item-text">
+                  <p>
+                    скидка постоянным клиентам
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section id="review" class="review">
+        <div class="review__bg"></div>
+        <div class="container">
+          <div class="review__inner">
+            <div class="review__head">
+              <div class="review__head-left">
+                <h5>
+                  Четко выполняем запросы заказчика
+                  и качественно ремонтируем по доступной цене.
+                </h5>
+              </div>
+              <div class="review__head-right">
+                <h2>
+                  ОТЗЫВЫ
+                </h2>
+              </div>
+            </div>
+            <div class="review__body">
+              <div class="swiper review__slider">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="review__item">
+                      <div class="review__item-head">
+                        <div class="review__item-photo">
+                          <img src="./images/review/photo-1.webp" alt="">
+                        </div>
+                        <div class="review__item-wrap">
+                          <h4>
+                            Артем Викторович
+                          </h4>
+                          <p>
+                            г. Москва
+                          </p>
+                          <p>
+                            01.07.2021
+                          </p>
+                        </div>
+                      </div>
+                      <div class="review__item-body">
+                        <p>
+                          Отличный сервис, профессиональная команда. Выполняют свою работу добросовестно, без
+                          навязывания допработ. Приехал на сход-развал. По результатам диагностики в данной работе не
+                          было необходимости, соответственно работы не производились. Спасибо за труд!
+                          Также отдельное спасибо за то, что есть возможность оплачивать работы бонусами. Бонусная
+                          программа достаточно обширная, стимулирующая клиента)
+                        </p>
+                      </div>
                     </div>
-                    <div class="faq__item-title">
-                      <p>
-                        Примерный текст вопроса для примера
-                      </p>
+                    <div class="review__item">
+                      <div class="review__item-head">
+                        <div class="review__item-photo">
+                          <img src="./images/review/photo-1.webp" alt="">
+                        </div>
+                        <div class="review__item-wrap">
+                          <h4>
+                            Артем Викторович
+                          </h4>
+                          <p>
+                            г. Москва
+                          </p>
+                          <p>
+                            01.07.2021
+                          </p>
+                        </div>
+                      </div>
+                      <div class="review__item-body">
+                        <p>
+                          Отличный сервис, профессиональная команда. Выполняют свою работу добросовестно, без
+                          навязывания допработ. Приехал на сход-развал. По результатам диагностики в данной работе не
+                          было необходимости, соответственно работы не производились. Спасибо за труд!
+                          Также отдельное спасибо за то, что есть возможность оплачивать работы бонусами. Бонусная
+                          программа достаточно обширная, стимулирующая клиента)
+                        </p>
+                      </div>
                     </div>
                   </div>
-                  <i class="icon-chevron"></i>
-                </div>
-                <div class="faq__item-body accordion-body">
-                  <div class="faq__item-wrap">
-                    <p>
-                      Подписали 1й контракт с СибАкадемСтрой на штукатурку и стяжку Европейский берег 1я очередь , на
-                      устройство гидроизоляции на объекте Миргород Подписали 1й контракт с СибАкадемСтрой на штукатурку
-                      и
-                      стяжку Европейский берег 1я очередь , на устройство гидроизоляции на объекте Миргород Подписали 1й
-                      контракт с СибАкадемСтрой на штукатурку и стяжку Европейский берег 1я очередь , на устройство
-                      гидроизоляции на объекте Миргород Подписали 1й контракт с СибАкадемСтрой на штукатурку и стяжку
-                      Европейский берег 1я очередь , на устройство гидроизоляции на объекте Миргород
-                    </p>
+                  <div class="swiper-slide">
+                    <div class="review__item">
+                      <div class="review__item-head">
+                        <div class="review__item-photo">
+                          <img src="./images/review/photo-1.webp" alt="">
+                        </div>
+                        <div class="review__item-wrap">
+                          <h4>
+                            Артем Викторович
+                          </h4>
+                          <p>
+                            г. Москва
+                          </p>
+                          <p>
+                            01.07.2021
+                          </p>
+                        </div>
+                      </div>
+                      <div class="review__item-body">
+                        <p>
+                          Отличный сервис, профессиональная команда. Выполняют свою работу добросовестно, без
+                          навязывания допработ. Приехал на сход-развал. По результатам диагностики в данной работе не
+                          было необходимости, соответственно работы не производились. Спасибо за труд!
+                          Также отдельное спасибо за то, что есть возможность оплачивать работы бонусами. Бонусная
+                          программа достаточно обширная, стимулирующая клиента)
+                        </p>
+                      </div>
+                    </div>
+                    <div class="review__item">
+                      <div class="review__item-head">
+                        <div class="review__item-photo">
+                          <img src="./images/review/photo-1.webp" alt="">
+                        </div>
+                        <div class="review__item-wrap">
+                          <h4>
+                            Артем Викторович
+                          </h4>
+                          <p>
+                            г. Москва
+                          </p>
+                          <p>
+                            01.07.2021
+                          </p>
+                        </div>
+                      </div>
+                      <div class="review__item-body">
+                        <p>
+                          Отличный сервис, профессиональная команда. Выполняют свою работу добросовестно, без
+                          навязывания допработ. Приехал на сход-развал. По результатам диагностики в данной работе не
+                          было необходимости, соответственно работы не производились. Спасибо за труд!
+                          Также отдельное спасибо за то, что есть возможность оплачивать работы бонусами. Бонусная
+                          программа достаточно обширная, стимулирующая клиента)
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="faq__item accordion">
-                <div class="faq__item-head">
-                  <div class="faq__item-wrap">
-                    <div class="faq__item-count">
-                      <span>
-                        05
-                      </span>
-                    </div>
-                    <div class="faq__item-title">
-                      <p>
-                        Примерный текст вопроса для примера
-                      </p>
-                    </div>
-                  </div>
-                  <i class="icon-chevron"></i>
+              <div class="swiper__btns">
+                <div class="swiper-button-prev review__slider-btn--prev">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="16" viewBox="0 0 48 16"
+                    data-prefix="igbv58jzr">
+                    <path data-name="1AleftW.svg"
+                      d="M.007 7.964v.051a.974.974 0 0 0 .16.5c.013.02.008.046.022.066l5.028 7a.974.974 0 0 0 1.372.22 1 1 0 0 0 .217-1.39L2.915 9h43.777a1.037 1.037 0 1 0 0-2H2.91l3.892-5.419A1 1 0 0 0 6.585.192a.974.974 0 0 0-1.372.219l-5.028 7c-.017.023-.011.055-.026.079a.97.97 0 0 0-.152.474z"
+                      fill-rule="evenodd" class="path-ivr8sjuea"></path>
+                  </svg>
                 </div>
-                <div class="faq__item-body accordion-body">
-                  <div class="faq__item-wrap">
-                    <p>
-                      Подписали 1й контракт с СибАкадемСтрой на штукатурку и стяжку Европейский берег 1я очередь , на
-                      устройство гидроизоляции на объекте Миргород Подписали 1й контракт с СибАкадемСтрой на штукатурку
-                      и
-                      стяжку Европейский берег 1я очередь , на устройство гидроизоляции на объекте Миргород Подписали 1й
-                      контракт с СибАкадемСтрой на штукатурку и стяжку Европейский берег 1я очередь , на устройство
-                      гидроизоляции на объекте Миргород Подписали 1й контракт с СибАкадемСтрой на штукатурку и стяжку
-                      Европейский берег 1я очередь , на устройство гидроизоляции на объекте Миргород
-                    </p>
-                  </div>
+                <div class="swiper-button-next review__slider-btn--next">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="16" viewBox="0 0 48 16"
+                    data-prefix="icl2c93d7">
+                    <path data-name="1ArightW.svg"
+                      d="M47.993 7.964v.051a.975.975 0 0 1-.161.5c-.012.02-.007.046-.021.066l-5.028 7a.974.974 0 0 1-1.372.22 1 1 0 0 1-.217-1.39L45.085 9H1.308a1.037 1.037 0 1 1 0-2H45.09L41.2 1.58a1 1 0 0 1 .217-1.389.974.974 0 0 1 1.372.219l5.028 7c.017.023.011.055.026.079a.981.981 0 0 1 .15.475z"
+                      fill-rule="evenodd" class="path-ic0ywdjxf"></path>
+                  </svg>
                 </div>
               </div>
-              <div class="faq__item accordion">
-                <div class="faq__item-head">
-                  <div class="faq__item-wrap">
-                    <div class="faq__item-count">
-                      <span>
-                        06
-                      </span>
-                    </div>
-                    <div class="faq__item-title">
-                      <p>
-                        Примерный текст вопроса для примера
-                      </p>
-                    </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery" class="gallery">
+        <div class="container">
+          <div class="gallery__inner">
+            <div class="gallery__head">
+              <div class="gallery__head-left">
+                <h5>
+                  Трудное будет сделано немедленно,
+                  невозможное потребует чуть больше времени.
+                </h5>
+              </div>
+              <div class="gallery__head-right">
+                <h2>
+                  ГАЛЕРЕЯ
+                </h2>
+              </div>
+            </div>
+            <div class="gallery__body">
+              <div class="swiper gallery__slider">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <a class="gallery__item" href="/images/gallery/gallery-1.webp" data-fancybox>
+                      <img src="./images/gallery/gallery-1.webp" alt="">
+                    </a>
                   </div>
-                  <i class="icon-chevron"></i>
+                  <div class="swiper-slide">
+                    <a class="gallery__item" href="/images/gallery/gallery-1.webp" data-fancybox>
+                      <img src="./images/gallery/gallery-1.webp" alt="">
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a class="gallery__item" href="/images/gallery/gallery-1.webp" data-fancybox>
+                      <img src="./images/gallery/gallery-1.webp" alt="">
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a class="gallery__item" href="/images/gallery/gallery-1.webp" data-fancybox>
+                      <img src="./images/gallery/gallery-1.webp" alt="">
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a class="gallery__item" href="/images/gallery/gallery-1.webp" data-fancybox>
+                      <img src="./images/gallery/gallery-1.webp" alt="">
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a class="gallery__item" href="/images/gallery/gallery-1.webp" data-fancybox>
+                      <img src="./images/gallery/gallery-1.webp" alt="">
+                    </a>
+                  </div>
                 </div>
-                <div class="faq__item-body accordion-body">
-                  <div class="faq__item-wrap">
-                    <p>
-                      Подписали 1й контракт с СибАкадемСтрой на штукатурку и стяжку Европейский берег 1я очередь , на
-                      устройство гидроизоляции на объекте Миргород Подписали 1й контракт с СибАкадемСтрой на штукатурку
-                      и
-                      стяжку Европейский берег 1я очередь , на устройство гидроизоляции на объекте Миргород Подписали 1й
-                      контракт с СибАкадемСтрой на штукатурку и стяжку Европейский берег 1я очередь , на устройство
-                      гидроизоляции на объекте Миргород Подписали 1й контракт с СибАкадемСтрой на штукатурку и стяжку
-                      Европейский берег 1я очередь , на устройство гидроизоляции на объекте Миргород
-                    </p>
+                <div class="swiper__btns">
+                  <div class="swiper-button-prev gallery__slider-btn--prev">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="16" viewBox="0 0 48 16"
+                      data-prefix="igbv58jzr">
+                      <path data-name="1AleftW.svg"
+                        d="M.007 7.964v.051a.974.974 0 0 0 .16.5c.013.02.008.046.022.066l5.028 7a.974.974 0 0 0 1.372.22 1 1 0 0 0 .217-1.39L2.915 9h43.777a1.037 1.037 0 1 0 0-2H2.91l3.892-5.419A1 1 0 0 0 6.585.192a.974.974 0 0 0-1.372.219l-5.028 7c-.017.023-.011.055-.026.079a.97.97 0 0 0-.152.474z"
+                        fill-rule="evenodd" class="path-ivr8sjuea"></path>
+                    </svg>
+                  </div>
+                  <div class="swiper-button-next gallery__slider-btn--next">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="16" viewBox="0 0 48 16"
+                      data-prefix="icl2c93d7">
+                      <path data-name="1ArightW.svg"
+                        d="M47.993 7.964v.051a.975.975 0 0 1-.161.5c-.012.02-.007.046-.021.066l-5.028 7a.974.974 0 0 1-1.372.22 1 1 0 0 1-.217-1.39L45.085 9H1.308a1.037 1.037 0 1 1 0-2H45.09L41.2 1.58a1 1 0 0 1 .217-1.389.974.974 0 0 1 1.372.219l5.028 7c.017.023.011.055.026.079a.981.981 0 0 1 .15.475z"
+                        fill-rule="evenodd" class="path-ic0ywdjxf"></path>
+                    </svg>
                   </div>
                 </div>
               </div>
@@ -326,16 +1324,12 @@
   </div>
   <!-- libs -->
   <script src="./libs/gsap/gsap.min.js"></script>
-  <script src="./libs/gsap/tweenmax.min.js"></script>
   <script src="./libs/gsap/ScrollToPlugin.min.js"></script>
   <script src="./libs/gsap/ScrollTrigger.min.js"></script>
-  <script src="./libs/gsap/ScrollSmoother.min.js"></script>
   <script src="./libs/lenis/lenis.min.js"></script>
   <script src="./libs/swiper/swiper-bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/transfer-elements@1.0.7/dist/transfer-elements.min.js"></script>
-  <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
-  <script src="https://unpkg.com/split-type"></script>
+  <script src="./libs/fancybox/jquery.fancybox.min.js"></script>
   <!-- scripts -->
   <script src="./js/main.js"></script>
 </body>

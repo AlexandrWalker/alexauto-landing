@@ -76,7 +76,7 @@ h5 {
   font-family: var(--font-family);
   font-weight: 400;
   font-size: 22px;
-  line-height: normal;
+  line-height: 120%;
 
   @include lg {
     font-size: 20px;
@@ -102,5 +102,5 @@ p {
   font-family: var(--font-family);
   font-weight: 500;
   font-size: 18px;
-  line-height: normal;
+  line-height: 120%;
 }

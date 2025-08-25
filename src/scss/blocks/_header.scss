@@ -13,6 +13,12 @@
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     height: var(--header-height);
+
+    @include lg {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
   }
 
   &__wrap {
@@ -38,6 +44,10 @@
     flex-direction: column;
     justify-content: center;
     gap: 5px;
+
+    @include md {
+      display: none;
+    }
   }
 
   &__center {

@@ -7,6 +7,15 @@
   align-items: center;
   gap: 20px;
 
+  @include lg {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  @include md {
+    flex-direction: row;
+  }
+
   img {
     height: 80px;
     object-fit: contain;

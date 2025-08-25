@@ -2,12 +2,36 @@
 
 .service {
 
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px;
+
+    @include lg {
+      gap: 30px;
+    }
+  }
 
   &__item {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 37px;
+    width: calc(50% - 30px);
+    background-color: #f1f1f180;
+    border-radius: 10px;
+    padding: 34px;
+    transition: all 0.5s ease;
+    color: var(--black);
+
+    @include lg {
+      width: 100%;
+    }
+
+    &:hover {
+      background-color: var(--black);
+      color: var(--white);
+    }
 
     &-img {
       display: flex;
@@ -17,6 +41,7 @@
       height: 120px;
       border-radius: 6px;
       position: relative;
+      background-color: var(--white);
 
       &::before {
         content: "";
@@ -33,6 +58,17 @@
         height: 70px;
         object-fit: cover;
       }
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    &-wrap {
+      font-size: 20px;
+      line-height: 150%;
     }
   }
 }

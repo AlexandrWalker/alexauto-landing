@@ -6,12 +6,12 @@
   --container-padding: 16px;
   --container-width: 1288px;
 
-  --white: #fffffc;
-  --black: #1b1e1f;
+  --white: rgb(255, 255, 252);
+  --black: rgb(27, 30, 31);
   --gray: #fffffccc;
-  --accent: #f50400;
+  --accent: rgb(245, 4, 0);
 
-  --page-bg: #ffffff;
+  --page-bg: rgb(255, 255, 255);
 
   --header-height: 120px;
 
@@ -23,6 +23,7 @@
   @include lg {
     --container-padding: 24px;
     --container-width: 912px;
+    --header-height: 160px;
   }
 
   @include sm {

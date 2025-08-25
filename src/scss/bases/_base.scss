@@ -31,9 +31,13 @@ body {
 }
 
 section {
-  padding: 7rem 0 6rem;
+  padding: 6rem 0;
   overflow-x: hidden;
   overflow-y: hidden;
+
+  @include lg {
+    padding: 4rem 0;
+  }
 }
 
 a {

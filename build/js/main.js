@@ -1,4 +1,4 @@
-gsap.registerPlugin(ScrollToPlugin, ScrollTrigger, ScrollSmoother);
+gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -93,6 +93,62 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   burgerNav();
 
+  /**
+   * Управляет поведением меню-контакта.
+   */
+  function contactNav() {
+    const contactBtn = document.querySelector('.contact-btn');
+    const contactMenu = document.querySelector('.contact-menu');
+    const contactClose = document.querySelector('.contact-close');
+    const overlay = document.querySelector('.contact-overlay');
+    const header = document.getElementById('header');
+    const elements = document.querySelectorAll('.contact-menu__list a');
+
+    /**
+     * Переключает видимость меню.
+     */
+    const toggleMenu = () => {
+      const isOpened = contactBtn.classList.toggle('contact-btn--opened');
+      const isHeaderOpened = header.classList.toggle('opened');
+      contactMenu.classList.toggle('contact-menu--opened', isOpened, isHeaderOpened);
+
+      lenis.stop();
+    };
+
+    /**
+     * Закрывает меню.
+     */
+    const closeMenu = () => {
+      header.classList.remove('opened');
+      contactBtn.classList.remove('contact-btn--opened');
+      contactMenu.classList.remove('contact-menu--opened');
+      lenis.start();
+    };
+
+    // Открытие/закрытие меню по клику на бургер
+    contactBtn.addEventListener('click', toggleMenu);
+
+    // Закрытие меню по клику на кнопку закрытия или на overlay
+    [contactClose, overlay].forEach((element) => element.addEventListener('click', closeMenu));
+
+    // Закрытие меню при клике вне области меню и бургера
+    document.addEventListener('click', (event) => {
+      if (!contactMenu.contains(event.target) && !contactBtn.contains(event.target)) {
+        closeMenu();
+      }
+    });
+
+    // Закрытие меню при нажатии на кнопку "Esc"
+    window.addEventListener('keydown', (e) => {
+      if (e.key === "Escape") {
+        closeMenu();
+      }
+    });
+
+    elements.forEach((element) => element.addEventListener('click', closeMenu));
+  }
+  contactNav();
+
   function accordionFunc() {
     if (document.querySelector('.accordion-parent')) {
       document.querySelectorAll('.accordion-parent').forEach((accordionContainer) => {
@@ -109,7 +165,6 @@ document.addEventListener('DOMContentLoaded', () => {
               accordionActive[0].classList.remove(accordionActiveClass);
             }
             this.classList.toggle(accordionActiveClass);
-            // ScrollTrigger.refresh();
 
             window.addEventListener('keydown', (e) => {
               if (e.key === "Escape") {
@@ -131,27 +186,130 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   accordionFunc();
 
-  const inputElements = document.querySelectorAll('.form-input');
-  const textareaElements = document.querySelectorAll('.form-textarea');
-  const className = 'filled';
-  inputElements.forEach(element => {
-    element.addEventListener('input', function () {
-      if (this.value.trim() !== '') {
-        element.classList.add(className);
-      } else {
-        element.classList.remove(className);
-      }
-    });
+  const reviewSlider = new Swiper(".review__slider", {
+    slidesPerGroup: 1,
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+    speed: 600,
+    mousewheel: {
+      forceToAxis: true,
+    },
+    navigation: {
+      nextEl: ".review__slider-btn--next",
+      prevEl: ".review__slider-btn--prev",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+    },
+    breakpoints: {
+      991: {
+        slidesPerView: 1,
+        spaceBetween: 60,
+      },
+    },
   });
-  textareaElements.forEach(element => {
-    element.addEventListener('input', function () {
-      if (this.value.trim() !== '') {
-        element.classList.add(className);
-      } else {
-        element.classList.remove(className);
-      }
-    });
+
+  const gallerySlider = new Swiper(".gallery__slider", {
+    slidesPerGroup: 1,
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+    speed: 600,
+    mousewheel: {
+      forceToAxis: true,
+    },
+    navigation: {
+      nextEl: ".gallery__slider-btn--next",
+      prevEl: ".gallery__slider-btn--prev",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+    },
+    breakpoints: {
+      769: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      992: {
+        slidesPerView: 3,
+        spaceBetween: 60,
+      },
+    },
   });
+
+  if (document.querySelector('.uniForm')) {
+    const mailPath = './mail.php';
+
+    document.querySelectorAll('.uniForm').forEach((el) => {
+      el.addEventListener('submit', function (event) {
+        event.preventDefault();
+        el.classList.remove('_failed');
+
+        let error = formValidate(el);
+
+        if (error === 0) {
+          let th = this,
+            params = new FormData(this),
+            request = new XMLHttpRequest();
+
+          request.open('POST', mailPath, true);
+          request.send(params);
+
+          request.onreadystatechange = function () {
+            if (this.readyState === 4) {
+              if (this.status === 200) {
+                setTimeout(function () {
+                  th.reset();
+                }, 1000);
+                el.classList.add('_success');
+                setTimeout(() => {
+                  el.classList.remove('_success');
+                }, 5000);
+              } else {
+                el.classList.add('_failed');
+              }
+            }
+          };
+        }
+      });
+    });
+
+    function formValidate(form) {
+      let error = 0;
+      let formReq = form.querySelectorAll('._req');
+
+      for (let index = 0; index < formReq.length; index++) {
+        const input = formReq[index];
+        formRemoveError(input);
+
+        if (input.getAttribute('type') === 'checkbox' && input.checked === false) {
+          formAddError(input);
+          error++;
+        } else if (input.classList.contains('_email')) {
+          if (emailTest(input)) {
+            formAddError(input);
+            error++;
+          }
+        } else {
+          if (input.value === '') {
+            formAddError(input);
+            error++;
+          }
+        }
+      }
+      return error;
+    }
+    function formAddError(input) {
+      input.classList.add('_error');
+    }
+    function formRemoveError(input) {
+      input.classList.remove('_error');
+    }
+    function emailTest(input) {
+      return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
+    }
+  }
 
   /**
    * Установка dropdown
@@ -216,5 +374,14 @@ document.addEventListener('DOMContentLoaded', () => {
       // updateSelected();
     });
   }
-  
+
+  /**
+ * Инициализация Fancybox
+ */
+  if (document.querySelector('.fancybox')) {
+    Fancybox.bind('[data-fancybox="gallery"]', {
+      // Your custom options
+    });
+  }
+
 });
