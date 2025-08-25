@@ -1,3 +1,95 @@
 @use './../mixins' as *;
 
-.hero {}
+.hero {
+  background-image: url(./../images/hero/bg.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    background-attachment: fixed;
+    background-image: none;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-color: rgba(23, 26, 45, 0.7);
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 80px 0;
+    position: relative;
+    z-index: 2;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    color: var(--white);
+    max-width: 740px;
+  }
+
+  &__title {}
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    &-item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 24px;
+    }
+
+    &-icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 64px;
+      height: 64px;
+      padding: 16px;
+      background-color: var(--accent);
+      border-radius: 50%;
+      position: relative;
+
+      &::before {
+        content: "";
+        display: block;
+        width: 2px;
+        height: 12px;
+        position: absolute;
+        top: 27px;
+        left: 25px;
+        transform: rotate(-45deg);
+        border-radius: 1px;
+        background: var(--white);
+        color: var(--white);
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        width: 2px;
+        height: 21px;
+        position: absolute;
+        top: 20px;
+        left: 36px;
+        transform: rotate(45deg);
+        border-radius: 1px;
+        background: var(--white);
+        color: var(--white);
+      }
+    }
+  }
+}

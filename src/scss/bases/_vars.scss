@@ -3,8 +3,8 @@
 :root {
   --font-family: "Roboto", sans-serif;
 
-  --container-padding: 30px;
-  --container-width: 1500px;
+  --container-padding: 16px;
+  --container-width: 1288px;
 
   --white: #fffffc;
   --black: #1b1e1f;
@@ -15,7 +15,18 @@
 
   --header-height: 120px;
 
-  @include md {
-    --container-padding: 20px;
+  @include xl {
+    --container-padding: 14px;
+    --container-width: 1152px;
+  }
+
+  @include lg {
+    --container-padding: 24px;
+    --container-width: 912px;
+  }
+
+  @include sm {
+    --container-padding: 12px;
+    --container-width: 576px;
   }
 }

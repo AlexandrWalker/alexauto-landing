@@ -2,50 +2,28 @@
 
 .btn {
   --width: fit-content;
-  --height: 60px;
-  --padding: 20px;
-  --button-color: var(--black);
-  --button-background: var(--white);
+  --height: 56px;
+  --padding-x: 35px;
+  --padding-y: 10px;
+  --button-color: var(--white);
+  --button-background: var(--accent);
 
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
-  background: var(--button-background);
   width: var(--width);
   height: var(--height);
-  padding: var(--padding);
+  padding: var(--padding-y) var(--padding-x);
   transition: all 0.3s ease;
+  border-radius: 36px;
+  background: var(--button-background);
 
-  font-weight: 500;
-  font-size: 16px;
+  font-weight: 700;
+  font-size: 20px;
   text-align: center;
   color: var(--button-color);
   white-space: nowrap;
-  text-transform: uppercase;
-
-  position: relative;
-  z-index: 1;
-  transition-delay: 0.2s;
-
-  i {
-    font-size: 24px;
-    color: var(--accent);
-    transition-delay: 0.2s;
-  }
-
-  &:hover {
-    --button-color: var(--white);
-    --button-background: transparent;
-
-    i {
-      color: var(--white);
-
-      @include sm {
-        color: var(--accent);
-      }
-    }
-  }
+  pointer-events: all;
 
   &:disabled {
     opacity: 0.5;

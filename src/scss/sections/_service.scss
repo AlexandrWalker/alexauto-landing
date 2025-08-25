@@ -1,0 +1,38 @@
+@use './../mixins' as *;
+
+.service {
+
+
+  &__item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 37px;
+
+    &-img {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 120px;
+      height: 120px;
+      border-radius: 6px;
+      position: relative;
+
+      &::before {
+        content: "";
+        display: block;
+        width: 60px;
+        height: 5px;
+        background-color: var(--accent);
+        position: absolute;
+        bottom: -2.5px;
+      }
+
+      img {
+        width: 70px;
+        height: 70px;
+        object-fit: cover;
+      }
+    }
+  }
+}
