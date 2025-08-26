@@ -28,6 +28,12 @@
       width: 100%;
     }
 
+    @include sm {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
     &:hover {
       background-color: var(--black);
       color: var(--white);
@@ -54,9 +60,16 @@
       }
 
       img {
-        width: 70px;
+        max-width: 70px;
         height: 70px;
-        object-fit: cover;
+        object-fit: contain;
+      }
+    }
+
+    &-title {
+
+      @include sm {
+        text-align: center;
       }
     }
 

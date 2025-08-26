@@ -90,12 +90,28 @@
     @include md {
       width: 100%;
       text-align: center;
+      align-items: center;
     }
 
     &-count {
       font-weight: 800;
       font-size: 70px;
       line-height: 120%;
+      width: fit-content;
+      position: relative;
+
+      &::before {
+        content: "";
+        display: block;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: var(--accent);
+        position: absolute;
+        top: 5px;
+        left: 0;
+        z-index: -1;
+      }
 
       @include md {
         font-size: 40px;

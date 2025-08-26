@@ -99,14 +99,6 @@ button {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-display: swap;
   src: url("../fonts/Montserrat-Light.woff2") format("woff2"), url("../fonts/Montserrat-Light.woff") format("woff");
   font-weight: 300;
   font-style: normal;
@@ -123,16 +115,24 @@ button {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-Regular.woff2") format("woff2"), url("../fonts/Montserrat-Regular.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/Montserrat-SemiBold.woff2") format("woff2"), url("../fonts/Montserrat-SemiBold.woff") format("woff");
+  font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-SemiBold.woff2") format("woff2"), url("../fonts/Montserrat-SemiBold.woff") format("woff");
-  font-weight: 600;
+  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-display: swap;
+  src: url("../fonts/Montserrat-Regular.woff2") format("woff2"), url("../fonts/Montserrat-Regular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -1627,6 +1627,23 @@ p {
   font-weight: 800;
   font-size: 70px;
   line-height: 120%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+}
+
+.about__item-count::before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  position: absolute;
+  top: 5px;
+  left: 0;
+  z-index: -1;
 }
 
 .faq {
@@ -2071,6 +2088,7 @@ p {
   -ms-flex-direction: row;
   flex-direction: row;
   gap: 60px;
+  height: auto;
 }
 
 .review__item {
@@ -2085,6 +2103,8 @@ p {
   padding: 60px;
   border-radius: 10px;
   background-color: var(--white);
+  width: calc(50% - 30px);
+  height: 100%;
 }
 
 .review__item-head {
@@ -2128,6 +2148,27 @@ p {
 
 .review__item-wrap p:first-child {
   color: var(--accent);
+}
+
+.review__item-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 20px;
+  height: 100%;
+}
+
+.review__item-body .btn {
+  margin-top: auto;
+}
+
+.review__item-body .btn:hover {
+  --button-background: rgb(168, 3, 0);
+  color: var(--white);
 }
 
 .service__items {
@@ -2193,10 +2234,10 @@ p {
 }
 
 .service__item-img img {
-  width: 70px;
+  max-width: 70px;
   height: 70px;
-  -o-object-fit: cover;
-  object-fit: cover;
+  -o-object-fit: contain;
+  object-fit: contain;
 }
 
 .service__item-content {
@@ -2685,6 +2726,9 @@ p {
   .about__item {
     width: 100%;
     text-align: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
   }
 
   .about__item-count {
@@ -2702,6 +2746,11 @@ p {
   .faq__items {
     gap: 20px;
     width: calc(50% - 10px);
+    width: 100%;
+  }
+
+  .review__item {
+    width: 100%;
   }
 
   .why__items {
@@ -2745,5 +2794,38 @@ p {
 
   h5 {
     font-size: 18px;
+  }
+
+  .banner {
+    padding: 40px;
+  }
+
+  .banner__imgs {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .banner__img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+  }
+
+  .service__item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .service__item-title {
+    text-align: center;
   }
 }

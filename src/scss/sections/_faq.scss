@@ -67,6 +67,7 @@
     @include md {
       gap: 20px;
       width: calc(50% - 10px);
+      width: 100%;
     }
   }
 
@@ -146,6 +147,10 @@
     text-align: center;
   }
 
+  @include sm {
+    padding: 40px;
+  }
+
   &__imgs {
     display: flex;
     gap: 60px;
@@ -153,6 +158,11 @@
 
     @include lg {
       padding: 0;
+    }
+
+    @include sm {
+      flex-direction: column;
+      gap: 20px;
     }
   }
 
@@ -164,6 +174,12 @@
 
     @include lg {
       height: 300px;
+    }
+
+    @include sm {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1/1;
     }
 
     img {
