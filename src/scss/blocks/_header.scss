@@ -19,6 +19,14 @@
       flex-direction: row;
       justify-content: space-between;
     }
+
+    @include sm {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      padding: 20px 0;
+      height: auto;
+    }
   }
 
   &__wrap {
@@ -60,5 +68,14 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+
+    &-btn {
+
+      @include sm {
+        --height: 40px;
+        --padding-x: 20px;
+        --padding-y: 10px;
+      }
+    }
   }
 }

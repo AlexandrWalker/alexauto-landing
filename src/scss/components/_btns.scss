@@ -39,4 +39,12 @@
       --button-background: rgba(255, 255, 252, 0.7);
     }
   }
+
+  &--accent.header__left-btn {
+
+    &:hover {
+      --button-background: rgba(255, 255, 252, 1);
+      --button-color: var(--black);
+    }
+  }
 }
