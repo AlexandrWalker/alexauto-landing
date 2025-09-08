@@ -83,14 +83,6 @@ button {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-display: swap;
   src: url("../fonts/Montserrat-ExtraBold.woff2") format("woff2"), url("../fonts/Montserrat-ExtraBold.woff") format("woff");
   font-weight: 800;
   font-style: normal;
@@ -101,6 +93,14 @@ button {
   font-display: swap;
   src: url("../fonts/Montserrat-ExtraLight.woff2") format("woff2"), url("../fonts/Montserrat-ExtraLight.woff") format("woff");
   font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-display: swap;
+  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -388,6 +388,11 @@ body {
 
 .btn--white:hover {
   --button-background: rgba(255, 255, 252, 0.7);
+}
+
+.btn--accent.header__left-btn:hover {
+  --button-background: rgba(255, 255, 252, 1);
+  --button-color: var(--black);
 }
 
 .dropdown {
@@ -2798,6 +2803,25 @@ p {
 
   h5 {
     font-size: 18px;
+  }
+
+  .header__inner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 0;
+    height: auto;
+  }
+
+  .header__left-btn {
+    --height: 40px;
+    --padding-x: 20px;
+    --padding-y: 10px;
   }
 
   .banner {
