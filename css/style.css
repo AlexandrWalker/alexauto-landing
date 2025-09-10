@@ -91,16 +91,16 @@ button {
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-ExtraLight.woff2") format("woff2"), url("../fonts/Montserrat-ExtraLight.woff") format("woff");
-  font-weight: 200;
+  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
-  font-weight: 700;
+  src: url("../fonts/Montserrat-ExtraLight.woff2") format("woff2"), url("../fonts/Montserrat-ExtraLight.woff") format("woff");
+  font-weight: 200;
   font-style: normal;
 }
 
@@ -1457,6 +1457,7 @@ p {
 
 .header {
   background-color: var(--black);
+  background-color: #000;
   color: var(--white);
   position: fixed;
   top: 0;
@@ -1556,12 +1557,12 @@ p {
 }
 
 .logo img {
+  width: 120px;
   height: 80px;
-  -o-object-fit: contain;
-  object-fit: contain;
-  padding: 10px;
-  border-radius: 50%;
-  background-color: var(--gray);
+  -o-object-fit: cover;
+  object-fit: cover;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 }
 
 /* Elements */
@@ -1617,7 +1618,9 @@ p {
   flex-direction: row;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  gap: 60px;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .about__item {
@@ -1629,7 +1632,7 @@ p {
   -ms-flex-direction: column;
   flex-direction: column;
   gap: 16px;
-  width: calc(25% - 45px);
+  width: auto;
 }
 
 .about__item-count {
@@ -1640,6 +1643,7 @@ p {
   width: -moz-fit-content;
   width: fit-content;
   position: relative;
+  white-space: nowrap;
 }
 
 .about__item-count::before {
@@ -2487,11 +2491,11 @@ p {
   }
 
   .about__items {
-    gap: 30px;
+    gap: 30px 0;
   }
 
   .about__item {
-    width: calc(50% - 15px);
+    width: 50%;
   }
 
   .faq__inner {
